@@ -30,7 +30,12 @@ class RadialGradientLayer: CALayer {
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let gradient = CGGradient(colorsSpace: colorSpace, colors: self.colors as CFArray, locations: self.locations)
-        context.drawRadialGradient(gradient!, startCenter: self.center, startRadius: 0.0, endCenter: self.center, endRadius: self.radius, options: CGGradientDrawingOptions(rawValue: 0))
+        context.drawRadialGradient(gradient!,
+                                   startCenter: self.center,
+                                   startRadius: 0.0,
+                                   endCenter: self.center,
+                                   endRadius: self.radius,
+                                   options: CGGradientDrawingOptions(rawValue: 0))
     }
     
 }
