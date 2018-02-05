@@ -4,13 +4,13 @@ class RadialGradientLayer: CALayer {
     
     var center: CGPoint!
     var radius: CGFloat!
-    private var colors: [CGColor]!
+    var colors: [CGColor]!
     var locations: [CGFloat]!
     
-    init(withColors colors: [CGColor]) {
+    override init() {
         super.init()
         
-        self.colors = colors
+        self.colors = [UIColor.white.cgColor]
         self.center = CGPoint(x: 0.0, y: 0.0)
         self.radius = 1
         self.locations = [0.0 as CGFloat, 1.0 as CGFloat]
