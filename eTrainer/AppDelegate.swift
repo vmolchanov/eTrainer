@@ -5,13 +5,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let mainViewController = MainViewController()
+        self.navigationController = UINavigationController(rootViewController: mainViewController)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = mainViewController
+        self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
         
         return true
