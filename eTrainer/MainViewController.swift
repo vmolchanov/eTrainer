@@ -17,30 +17,46 @@ class MainViewController: UIViewController {
         }
     }
     
-    var beginTrainingButton: UIButton! {
+    var beginTrainingButton: CircleButton! {
         didSet {
-            let width: CGFloat = 150.0
-            let height: CGFloat = 150.0
-            let x = (self.view.bounds.size.width - width) / 2.0
-            let y = (self.view.bounds.size.height - height) / 2.0
-            
             self.beginTrainingButton.setTitle("Начать тренировку", for: .normal)
             self.beginTrainingButton.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9), for: .normal)
             self.beginTrainingButton.titleLabel?.lineBreakMode = .byWordWrapping
             self.beginTrainingButton.titleLabel?.textAlignment = .center
             self.beginTrainingButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)
-            self.beginTrainingButton.frame = CGRect(x: x, y: y, width: width, height: height)
-            self.beginTrainingButton.layer.cornerRadius = width / 2.0
-            self.beginTrainingButton.clipsToBounds = true
             
             let gradientLayer = CAGradientLayer()
             let topColor = UIColor(red: 96.0 / 255, green: 210.0 / 255, blue: 196.0 / 255, alpha: 1.0)
             let bottomColor = UIColor(red: 0.0 / 255, green: 130.0 / 255, blue: 106.0 / 255, alpha: 1.0)
             gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
-            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
             gradientLayer.frame = self.beginTrainingButton.bounds
-            self.beginTrainingButton.layer.insertSublayer(gradientLayer, at: 0)
+            self.beginTrainingButton.insertSublayer(gradientLayer, at: 0)
+            
+            self.beginTrainingButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            self.beginTrainingButton.layer.shadowOpacity = 1.0
+            self.beginTrainingButton.layer.shadowColor = UIColor.white.cgColor
+            self.beginTrainingButton.layer.shadowRadius = 50.0
+            
+            let animation = CABasicAnimation(keyPath: "shadowRadius")
+            animation.fromValue = 30.0
+            animation.toValue = 5.0
+            animation.autoreverses = true
+            animation.duration = 1.0
+            animation.repeatCount = .infinity
+            self.beginTrainingButton.layer.add(animation, forKey: "shadowRadius")
+        }
+    }
+    
+    var beginTrainingButtonSubstrate: UIView! {
+        didSet {
+            self.beginTrainingButtonSubstrate.backgroundColor = UIColor.yellow
+            self.beginTrainingButtonSubstrate.layer.cornerRadius = 75.0
+            self.beginTrainingButtonSubstrate.layer.shadowOffset = CGSize(width: 0, height: 0)
+            self.beginTrainingButtonSubstrate.layer.shadowColor = UIColor.black.cgColor
+            self.beginTrainingButtonSubstrate.layer.shadowRadius = 10.0
+            self.beginTrainingButtonSubstrate.layer.shadowOpacity = 1.0
         }
     }
 
@@ -102,13 +118,19 @@ class MainViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
         
         self.radialGradientLayer = RadialGradientLayer()
-        self.view.layer.insertSublayer(radialGradientLayer, at: 0)
-        self.beginTrainingButton = UIButton(type: .custom)
+        
+        let beginTrainingButtonSize: CGFloat = 150.0
+        self.beginTrainingButton = CircleButton(x: (self.view.bounds.size.width - beginTrainingButtonSize) / 2.0,
+                                                y: (self.view.bounds.size.height - beginTrainingButtonSize) / 2.0,
+                                                size: beginTrainingButtonSize)
+        
         self.yourSuccessButton = UIButton(type: .custom)
+        
         self.myTrainingsBarButtonItem = UIBarButtonItem(title: "Мои тренировки",
                                                         style: .plain,
                                                         target: nil,
                                                         action: nil)
+        
         self.settingBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "settingsIcon"),
                                                     style: .plain,
                                                     target: nil,
@@ -118,6 +140,7 @@ class MainViewController: UIViewController {
         self.view.addSubview(self.yourSuccessButton)
         self.navigationItem.rightBarButtonItem = self.myTrainingsBarButtonItem
         self.navigationItem.leftBarButtonItem = self.settingBarButtonItem
+        self.view.layer.insertSublayer(radialGradientLayer, at: 0)
     }
 
 }

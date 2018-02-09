@@ -12,6 +12,7 @@
 		BC9810522024F6080011A803 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9810512024F6080011A803 /* MainViewController.swift */; };
 		BC9810582024F6080011A803 /* eTrainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC9810562024F6080011A803 /* eTrainer.xcdatamodeld */; };
 		BC98105A2024F6080011A803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC9810592024F6080011A803 /* Assets.xcassets */; };
+		BCD998C3202DB7B9008F62C9 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD998C2202DB7B9008F62C9 /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BC9810572024F6080011A803 /* eTrainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eTrainer.xcdatamodel; sourceTree = "<group>"; };
 		BC9810592024F6080011A803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC98105E2024F6080011A803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCD998C2202DB7B9008F62C9 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				BC98104F2024F6080011A803 /* AppDelegate.swift */,
 				BC9810512024F6080011A803 /* MainViewController.swift */,
 				BC90261620288262007C7269 /* RadialGradientLayer.swift */,
+				BCD998C2202DB7B9008F62C9 /* CircleButton.swift */,
 				BC9810592024F6080011A803 /* Assets.xcassets */,
 				BC98105E2024F6080011A803 /* Info.plist */,
 				BC9810562024F6080011A803 /* eTrainer.xcdatamodeld */,
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD998C3202DB7B9008F62C9 /* CircleButton.swift in Sources */,
 				BC90261720288262007C7269 /* RadialGradientLayer.swift in Sources */,
 				BC9810582024F6080011A803 /* eTrainer.xcdatamodeld in Sources */,
 				BC9810522024F6080011A803 /* MainViewController.swift in Sources */,
