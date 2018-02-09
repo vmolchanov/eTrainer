@@ -57,14 +57,38 @@
 			isa = PBXGroup;
 			children = (
 				BC98104F2024F6080011A803 /* AppDelegate.swift */,
-				BC9810512024F6080011A803 /* MainViewController.swift */,
-				BC90261620288262007C7269 /* RadialGradientLayer.swift */,
-				BCD998C2202DB7B9008F62C9 /* CircleButton.swift */,
+				BCD998C6202DD780008F62C9 /* Controllers */,
+				BCD998C4202DD748008F62C9 /* Views */,
+				BCD998C5202DD764008F62C9 /* Layers */,
 				BC9810592024F6080011A803 /* Assets.xcassets */,
 				BC98105E2024F6080011A803 /* Info.plist */,
 				BC9810562024F6080011A803 /* eTrainer.xcdatamodeld */,
 			);
 			path = eTrainer;
+			sourceTree = "<group>";
+		};
+		BCD998C4202DD748008F62C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCD998C2202DB7B9008F62C9 /* CircleButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCD998C5202DD764008F62C9 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				BC90261620288262007C7269 /* RadialGradientLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		BCD998C6202DD780008F62C9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC9810512024F6080011A803 /* MainViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
