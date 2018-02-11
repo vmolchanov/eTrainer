@@ -137,14 +137,21 @@ class MainViewController: UIViewController {
         
         self.settingBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "settingsIcon"),
                                                     style: .plain,
-                                                    target: nil,
-                                                    action: nil)
+                                                    target: self,
+                                                    action: #selector(settingBarButtonItemTap))
         
         self.view.addSubview(self.beginTrainingButton)
         self.view.addSubview(self.yourSuccessButton)
         self.navigationItem.rightBarButtonItem = self.myTrainingsBarButtonItem
         self.navigationItem.leftBarButtonItem = self.settingBarButtonItem
         self.view.layer.insertSublayer(radialGradientLayer, at: 0)
+    }
+    
+    // MARK: - Экшены
+    
+    @objc func settingBarButtonItemTap(sender: UIBarButtonItem) {
+        let settingsTableViewController = SettingsTableViewController()
+        self.navigationController?.pushViewController(settingsTableViewController, animated: true)
     }
 
 }
