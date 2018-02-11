@@ -1,6 +1,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    // MARK: - Свойства
 
     var radialGradientLayer: RadialGradientLayer! {
         didSet {
@@ -108,6 +110,8 @@ class MainViewController: UIViewController {
             self.settingBarButtonItem.tintColor = UIColor.white
         }
     }
+    
+    // MARK: - Жизненный цикл UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
